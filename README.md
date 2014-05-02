@@ -3,5 +3,4 @@ node-proxy-server
 
 proxy server for web request using node
 
-config - JSON file that contains a few default setup parameters and a list of the subdomains the proxy will be serving. 
-    Add your subdomains between the curly braces, example in the config file.
+The proxy server needs a config file to work. A config.example file has been provided, you can simply modify it to suit your needs and then rename it as 'config' ie. $mv config.example config
