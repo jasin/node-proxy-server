@@ -1,6 +1,7 @@
 {
 	"port": 8080,
 	"subdomain": {
-		"www.coleburt.com": 9001 
+		"www.example.com": 9001,
+		"blog.example.com": 9002 
 	}
 }
