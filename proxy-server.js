@@ -12,14 +12,14 @@ var obj = JSON.parse(fs.readFileSync('./config', 'utf8')),
 var proxy = httpProxy.createProxyServer();
 var server = http.createServer(function(req, res){
     if(subdomain[req.headers.host]) {
-		console.log('Routing a request for ' + req.headers.host);
+	console.log('Routing a request for ' + req.headers.host);
         proxy.web(req, res, {
             target: 'http://localhost:' + subdomain[req.headers.host]
         }, function(e) {
             console.log('Error: ' + e['code']);
         });
     } else {
-		console.log('Routing default request for unknown subdomain ' + req.headers.host);
+	console.log('Routing default request for unknown subdomain ' + req.headers.host);
         proxy.web(req, res, {
             target: 'http://localhost:9000'
         });
