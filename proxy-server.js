@@ -29,7 +29,7 @@ var server = http.createServer(function(req, res){
 // default server to route incase there is no matching subdomain
 var base = http.createServer(function(req, res){
 	res.writeHead(200, {'Content-type': 'text/html'});
-	res.end('<h3>Oops! We had an issue, blame Rob!</h3>');
+	res.end('<h3>Oops! We had an issue, blame Jasin!</h3>');
 }).listen(9000);
 
 console.log('Proxy server listening on port ' + port);
