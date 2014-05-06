@@ -16,7 +16,7 @@ var server = http.createServer(function(req, res){
 		proxy.web(req, res, {
 			target: 'http://localhost:' + subdomain[req.headers.host]
 		}, function(e) {
-			console.log('Error: ' + e['code']);
+			console.log('Error: ' + e.code);
 		});
 	} else {
 		console.log('Routing default request for unknown subdomain ' + req.headers.host);
@@ -28,8 +28,15 @@ var server = http.createServer(function(req, res){
 
 // default server to route incase there is no matching subdomain
 var base = http.createServer(function(req, res){
-	res.writeHead(200, {'Content-type': 'text/html'});
-	res.end('<h3>Oops! We had an issue, blame Rob!</h3>');
+	fs.readFile('./error.html', function(err, data) {
+        if (err) {
+            console.log(err);
+            data = '<h4>There was a problem</h4>';
+        }
+        res.writeHead(200, {'Content-type': 'text/html'});
+        res.end(data);
+	});
+	
 }).listen(9000);
 
 console.log('Proxy server listening on port ' + port);
