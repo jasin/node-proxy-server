@@ -3,7 +3,7 @@
     "proxy_port": 8080,
     "web_port": 9000,
     "subdomain": {
-		"www.example.com": 9001,
-		"blog.example.com": 9002 
-	}
+        "www.example.com": 9001,
+        "blog.example.com": 9002 
+    }
 }
