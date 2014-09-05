@@ -4,7 +4,7 @@ var http = require('http'),
 	fs = require('fs');
 
 // read the config file and set some variables
-var obj = JSON.parse(fs.readFileSync('./config', 'utf8')),
+var obj = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'config'), 'utf8')),
 	proxy_port = obj.proxy_port,
 	web_port = obj.web_port,
 	subdomain = obj.subdomain,
