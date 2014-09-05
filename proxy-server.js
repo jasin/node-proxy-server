@@ -1,7 +1,8 @@
 // include required js
 var http = require('http'),  
 	httpProxy = require('http-proxy'),
-	fs = require('fs');
+	fs = require('fs'),
+	path = require('path');
 
 // read the config file and set some variables
 var obj = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'config'), 'utf8')),
