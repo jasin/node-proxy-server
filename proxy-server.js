@@ -22,6 +22,8 @@ var server = http.createServer(function(req, res){
 		console.log('Routing default request for unknown subdomain ' + req.headers.host);
 		proxy.web(req, res, {
 			target: 'http://localhost:9000'
+		}, function(e) {
+			console.log('Error: ' + e['code']);
 		});
 	}
 }).listen(port);
