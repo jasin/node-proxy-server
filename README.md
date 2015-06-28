@@ -9,4 +9,4 @@ Email: jasin(at)coleburt(dot)com
 
 Update: June 28 2015
   *Now compatible with IPv4/6
-  *Capability to proxy websockets
+  *Capability to route websockets
