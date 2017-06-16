@@ -70,7 +70,7 @@ function webRoute(req, res) {
 				console.log('Error: ' + e.code);
 			});
 		} else {
-			defaultRoute();
+			defaultRoute(req);
 		}
 };
 
@@ -85,7 +85,7 @@ function wsRoute(req, res) {
 };
 
 // default router
-function defaultRoute() {
+function defaultRoute(req) {
 	console.log('Routing default request: ' + req.headers.host + ' From: ' + req.connection.remoteAddress);
 	proxy.web(req, res, {
 		target: 'http://localhost:' + web_port
